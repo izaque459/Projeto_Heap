@@ -1,4 +1,5 @@
-
+import heapq
+from palavras import palavras
 
 
 def heapsort(input_list):
@@ -10,12 +11,22 @@ def heapsort(input_list):
         heapq.heappush(h,input_list[i])
     
     for i in range(0,tam):
-        output = heappop(h)
+        output_list.append(heapq.heappop(h))
 
     return output_list
 
-lista_ordenada_python = sorted(lista_para_ordenar)
-if lista_ordenada == lista_ordenada_python:
-    print("\nOrdenação correta!")
+
+
+teste = sorted(palavras)
+
+print("\n Palavras em ordem qualquer \n")
+print(palavras)
+
+palavras_ordenadas = heapsort(palavras)
+print("\n Palavras ordenadas pelo algoritmo HeapSort \n")
+print(palavras_ordenadas)
+
+if palavras_ordenadas == teste:
+    print(" \nPalavras ordenadas corretamente\n")
 else:
-    print("\nOrdenação INCORRETA!")
+    print(" \n Palavras ordenadas incorretamente \n")
